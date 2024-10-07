@@ -24,6 +24,8 @@ This task implements an API endpoint and CLI command for processing payments via
 | `exp_year`    | String | Yes      | The card's expiration year.           |
 | `exp_month`   | String | Yes      | The card's expiration month.          |
 | `cvv`         | String | Yes      | The card's CVV code.                  |
+| `paymeny_brand`         | String | No      | VISA or Master Card or Else.                  |
+| `payment_type`         | String | No      | DB -Debit Card, or CC - Credit Card                  |
 
 ### **Example Request**:
 ```bash
@@ -133,7 +135,6 @@ public function testProcessShift4Payment()
     $response = $this->createMock(ResponseInterface::class);
     $response->method('toArray')->willReturn([
         'transaction_id' => 'txn_12345',
-```php
         'amount' => 100,
         'currency' => 'USD',
         'card' => ['number' => '4242424242424242'],
