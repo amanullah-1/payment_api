@@ -3,3 +3,9 @@ controllers:
         path: ../src/Controller/
         namespace: App\Controller
     type: attribute
+
+
+process_payment:
+   path: /app/example/{system}
+   controller: App\Controller\PaymentController::processPayment
+   methods: [POST]
